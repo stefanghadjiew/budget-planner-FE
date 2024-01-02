@@ -1,0 +1,12 @@
+@use '../../styles/palette.module';
+
+$page-max-width: 1280px;
+$page-padding: 2rem;
+$page-margin: 0 auto;
+
+.pageMainContainer {
+    max-width: $page-max-width;
+    margin: $page-margin;
+    padding: $page-padding;
+    background-color: palette.$bgColor;
+}

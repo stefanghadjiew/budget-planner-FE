@@ -1,0 +1,76 @@
+@use '../../styles/palette.module';
+@use '../../styles/font.module';
+
+$min-button-height: 30px;
+$padding: 0.6em 1.2em;
+$border-radius: 0.5em;
+$smallWidth: 120px;
+$mediumWidth: 180px;
+$largeWidth: 240px;
+$transitionFunction: all .3s ease-in-out;
+
+.button {
+    text-transform: capitalize;
+    font-size: inherit;
+    border-radius: $border-radius;
+    outline: 0;
+    min-height: $min-button-height;
+    padding: $padding;
+    cursor: pointer;
+    border: 0;
+    white-space: nowrap;
+    color: palette.$white;
+    transition: $transitionFunction;
+    font-family: inherit;
+    font-weight: font.$fontWeightNormal;
+
+    &:hover {
+        background-color: palette.$purple;
+        transform: translateY(-.25em);
+    }
+
+    &--small {
+        width: $smallWidth;
+    }
+    &--medium {
+        width: $mediumWidth;
+    }
+    &--large {
+        width: $largeWidth;
+    }
+
+    &--primary {
+        background-color: palette.$purple-light;
+    }
+
+    &--secondary {
+        background-color: palette.$orange;
+        &:hover {
+            background-color: palette.$orange-dark;
+        }
+    }
+
+    &--outlined {
+        background-color: transparent;
+
+        
+            border: 1px solid palette.$purple-light;
+            color: palette.$purple-light;
+
+            &:hover {
+                background-color: rgba(palette.$purple,0.1);
+            }
+        
+
+        &--secondary {
+            border: 1px solid palette.$orange;
+            color: palette.$orange;
+
+            &:hover {
+                background-color: rgba(palette.$orange,0.1);
+            }
+        }
+
+        
+    }
+}
