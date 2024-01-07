@@ -1,0 +1,69 @@
+$gap-step: 8px;
+
+$justify_content_values: (
+    flex-start,
+    flex-end,
+    baseline,
+    start,
+    end,
+    center,
+    space-between,
+    space-around,
+    space-evenly,
+    stretch,
+    normal,
+    left,
+    right
+);
+
+$align_items_values: (
+    center,
+    start,
+    end,
+    flex-start,
+    flex-end,
+    self-start,
+    self-end,
+    baseline,
+    normal,
+    stretch
+);
+
+$flex_wrap_values: (
+    wrap,
+    nowrap,
+    wrap-reverse
+);
+
+
+.flex-component {
+    display: flex;
+
+    &--vertical {
+        flex-direction: column;
+    }
+
+    @each $value in $justify_content_values {
+        &--justify-#{$value} {
+            justify-content: $value;
+        }
+    }
+    
+    @each $value in $align_items_values {
+        &--align-items-#{$value} {
+            align-items: $value;
+        }
+    }
+
+    @each $value in $flex_wrap_values {
+        &--flex-wrap-#{$value} {
+            flex-wrap: $value;
+        }
+    }
+
+    @for $i from 1 through 24 {
+        &--gap-#{$i} {
+            gap : $gap-step * $i
+        }
+    }
+}
