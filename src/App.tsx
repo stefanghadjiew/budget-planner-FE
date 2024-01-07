@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Button, Page } from './components';
+import { Button, Page, Flex } from './components';
 
 export const App: React.FC = () => {
   const buttonRef = useRef(null);
@@ -14,7 +14,11 @@ export const App: React.FC = () => {
     <Page>
       <h1>Hello</h1>
       <h2>Stefan</h2>
-      <Button ref={buttonRef} outlined type="secondary" />
+
+      <Flex gap={4} vertical style={{ marginTop: '5rem' }}>
+        <Button ref={buttonRef} type="primary" />
+        <Button ref={buttonRef} outlined type="secondary" />
+      </Flex>
     </Page>
   );
 };
